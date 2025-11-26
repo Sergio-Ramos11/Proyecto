@@ -1,0 +1,48 @@
+### Prueba básica
+GET http://127.0.0.1:8000
+
+### Login
+POST http://127.0.0.1:8000/login
+Content-Type: application/json
+
+{
+    "email": "admin@system.com",
+    "password": "admin123"
+}
+
+### Registrar usuario
+POST http://127.0.0.1:8000/register
+Content-Type: application/json
+
+{
+    "name": "Nuevo Usuario",
+    "email": "nuevo@test.com",
+    "password": "12345",
+    "role": "gestor"
+}
+
+### Listar usuarios (requiere token)
+GET http://127.0.0.1:8000/usuarios
+Authorization: Bearer 4af37e0c06bce30ea94c66b16009412fde34a18b19885a23c259ef38ee21fc97
+
+### Obtener usuario por ID
+GET http://127.0.0.1:8000/usuarios/1
+Authorization: 4af37e0c06bce30ea94c66b16009412fde34a18b19885a23c259ef38ee21fc97
+
+### Actualizar usuario
+PUT http://127.0.0.1:8000/usuarios/1
+Content-Type: application/json
+Authorization: Bearer 4af37e0c06bce30ea94c66b16009412fde34a18b19885a23c259ef38ee21fc97
+
+{
+    "name": "Admin Actualizado",
+    "role": "administrador"
+}
+
+### Eliminar usuario
+DELETE http://127.0.0.1:8000/usuarios/3
+Authorization: Bearer 4af37e0c06bce30ea94c66b16009412fde34a18b19885a23c259ef38ee21fc97
+
+### Cerrar sesión
+POST http://127.0.0.1:8000/logout
+Authorization: Bearer 4af37e0c06bce30ea94c66b16009412fde34a18b19885a23c259ef38ee21fc97

@@ -1,14 +1,12 @@
 <?php
-
 use Illuminate\Database\Capsule\Manager as Capsule;
 
 $capsule = new Capsule;
 
 $capsule->addConnection([
-
     'driver'    => 'mysql',
     'host'      => '127.0.0.1',
-    'database'  => 'grupo_1_avanzada',
+    'database'  => 'vuelos_app',
     'username'  => 'root',
     'password'  => '',
     'charset'   => 'utf8',
@@ -18,5 +16,3 @@ $capsule->addConnection([
 
 $capsule->setAsGlobal();
 $capsule->bootEloquent();
-
-?>
