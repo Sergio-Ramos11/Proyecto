@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Panel Gestor</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="header">
+    <h2>Panel del Gestor</h2>
+</div>
+
+<div class="container">
+
+    <div class="card">
+        <h3>Crear Reserva</h3>
+
+        <input id="buscar-origen" type="text" placeholder="Buscar por Origen">
+        <input id="buscar-destino" type="text" placeholder="Buscar por Destino">
+        <input id="buscar-fecha" type="date">
+
+        <button onclick="buscarVuelos()">Crear Vuelos</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Origen</th>
+                    <th>Destino</th>
+                    <th>Fecha</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-vuelos"></tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h3>Mis Reservas</h3>
+
+        <button onclick="getMisReservas()">Actualizar Lista</button>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Vuelo</th>
+                    <th>Fecha Reserva</th>
+                    <th>Acción</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-reservas"></tbody>
+        </table>
+    </div>
+
+    <div>
+    <button onclick="logout()">Cerrar Sesión</button>
+</div>
+
+</div>
+
+<script src="js/app.js"></script>
+
+<script>

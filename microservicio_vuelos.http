@@ -1,0 +1,93 @@
+
+@token = e818da10d1f65e2d4ed9d3dd4495a1ece0677a654d5cd5cc4dc7756923d7d4de
+
+
+GET http://127.0.0.1:8001/naves/all
+Accept: application/json
+
+
+POST http://127.0.0.1:8001/naves/create
+Content-Type: application/json
+
+{
+  "name": "Aeronave X1",
+  "capacity": 180,
+  "model": "Airbus A320"
+}
+
+
+
+PUT http://127.0.0.1:8001/naves/update/1
+Content-Type: application/json
+
+{
+  "name": "Aeronave X1 Pro",
+  "capacity": 250,
+  "model": "Airbus A321"
+}
+
+
+
+DELETE http://127.0.0.1:8001/naves/delete/1
+
+
+GET http://127.0.0.1:8001/vuelos/all
+Accept: application/json
+
+
+
+POST http://127.0.0.1:8001/vuelos/create
+Content-Type: application/json
+
+{
+  "origin": "Bogotá",
+  "destination": "Medellín",
+  "departure": "2025-12-01 08:00",
+  "arrival": "2025-12-01 09:00",
+  "price": 350000,
+  "nave_id": 2
+}
+
+
+
+PUT http://127.0.0.1:8001/vuelos/update/1
+Content-Type: application/json
+
+{
+  "price": 400000,
+  "destination": "Cali"
+}
+
+
+
+DELETE http://127.0.0.1:8001/vuelos/delete/1
+
+
+
+
+
+GET http://127.0.0.1:8001/vuelos/search?origin=Bogotá&destination=Medellín&departure=2025-12-01
+Accept: application/json
+
+
+
+POST http://127.0.0.1:8001/reservas/create
+Authorization: Bearer e818da10d1f65e2d4ed9d3dd4495a1ece0677a654d5cd5cc4dc7756923d7d4de
+Content-Type: application/json
+
+{
+  "flight_id": 2
+}
+
+
+
+
+GET http://127.0.0.1:8001/reservas/my
+Authorization: Bearer e818da10d1f65e2d4ed9d3dd4495a1ece0677a654d5cd5cc4dc7756923d7d4de
+Accept: application/json
+
+
+
+
+DELETE http://127.0.0.1:8001/reservas/delete/1
+Authorization: Bearer e818da10d1f65e2d4ed9d3dd4495a1ece0677a654d5cd5cc4dc7756923d7d4de

@@ -1,0 +1,28 @@
+# Prueba del microservicio
+GET  http://127.0.0.1:8000
+
+### Obtener todos los usuarios
+GET http://localhost:8000/usuarios/all
+
+### Login usuario
+POST http://127.0.0.1:8000/usuarios/login
+Content-Type: application/json
+
+{
+  "email": "admin@system.com",
+  "password": "admin123"
+}
+
+### Registrar usuario (Solo Administrador)
+POST http://127.0.0.1:8000/usuarios/register
+Authorization: Bearer e818da10d1f65e2d4ed9d3dd4495a1ece0677a654d5cd5cc4dc7756923d7d4de
+Content-Type: application/json
+
+{
+    "name": "Nuevo Gestor2",
+    "email": "nuevo@gestor2.com",
+    "password": "gestor123",
+    "role": "gestor"
+}
+
+
